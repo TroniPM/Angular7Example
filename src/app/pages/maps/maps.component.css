@@ -1,0 +1,28 @@
+agm-map {
+    height: 500px;
+}
+
+.custom {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.black-custom {
+    background-color: #000;
+}
+
+.back-custom {
+    /* NÃO ADIANTA COLOCAR O "background-color: #000;" AQUI. TEM QUE SER NA DIV SUPERIOR */
+    opacity: 0.5;
+}
+
+.modal,
+.modal-backdrop {
+    position: absolute !important;
+}
+
+.modal-fullscreen-custom {
+    width: 100%;
+    padding: 15px;
+}

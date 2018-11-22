@@ -1,0 +1,42 @@
+<div>
+  <button type="button" class="hidden" id="btn" data-toggle="modal" data-target="#exampleModal">
+    dummy
+  </button>
+
+
+  <div id="streamDiv" class="custom">
+    <div id="mapdiv" name="mapdiv">
+      <!-- MAP -->
+      <agm-map id="map" name="map" [latitude]="zoomInicial.latitude" [longitude]="zoomInicial.longitude">
+        <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+          <agm-marker *ngFor="let pin of arrayPins" #markerClicked="" [title]="''+pin.id+''" (markerClick)="markerOnClick(markerClicked)"
+            [latitude]="pin.latitude" [longitude]="pin.longitude">
+          </agm-marker>
+        </agm-marker-cluster>
+      </agm-map>
+      <!-- ../ MAP -->
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-backdrop="false" tabindex="-1" role="dialog" aria-hidden="true"
+      aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog modal-fullscreen-custom" role="div">
+        <!-- O MILAGRE ESTA NA ROLE AQUI -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Visualizar câmera</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" id="botao-close-modal1">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <stream-video-main></stream-video-main>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="botao-close-modal2" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ../ Modal -->
+  </div>
+</div>

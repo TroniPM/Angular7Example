@@ -1,0 +1,68 @@
+<div [hidden]="!submitted">
+  <h2>Submetido:</h2>
+  <div class="row">
+    <div class="col-xs-3">Nome</div>
+    <div class="col-xs-9">{{ model.nome }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">E-mail</div>
+    <div class="col-xs-9">{{ model.email }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Cidade</div>
+    <div class="col-xs-9">{{ model.cidade }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Bio</div>
+    <div class="col-xs-9">{{ model.bio }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+<!-- {{diagnostic}} -->
+
+<div class="bootstrap-iso">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <form #formVar="ngForm" (ngSubmit)="onSubmit(formVar)">
+          <div class="form-group ">
+            <label class="control-label " for="nome">
+              Nome
+            </label>
+            <input class="form-control" id="nome" name="nome" type="text" [(ngModel)]="model.nome" />
+          </div>
+          <div class="form-group ">
+            <label class="control-label requiredField" for="email">
+              E-mail
+              <span class="asteriskField">
+                *
+              </span>
+            </label>
+            <input class="form-control" id="email" name="email" type="text" [(ngModel)]="model.email" />
+          </div>
+          <div class="form-group ">
+            <label class="control-label " for="cidade">
+              Cidade
+            </label>
+            <input class="form-control" id="cidade" name="cidade" type="text" [(ngModel)]="model.cidade" />
+          </div>
+          <div class="form-group ">
+            <label class="control-label " for="msg">
+              Bio
+            </label>
+            <textarea class="form-control" cols="40" id="msg" name="msg" rows="10" [(ngModel)]="model.bio"></textarea>
+          </div>
+          <div class="form-group">
+            <div>
+              <button class="btn btn-primary " name="submit" type="submit">
+                Enviar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
